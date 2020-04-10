@@ -98,3 +98,39 @@ AND stock.id_pizzeria = p_pizzeria_id
 AND pizzeria.id = p_pizzeria_id;
 
 END|
+
+CREATE PROCEDURE creation_commande(IN p_paiement INT)
+
+BEGIN
+set @utilisateur_id = ROUND(RAND()*4)+1;
+set @pizzeria_id = ROUND(RAND()*2)+1;
+INSERT INTO commandes(date_ajout,id_statut,id_utilisateur,statut_paiement,id_pizzeria) VALUES (DATE(NOW()),1,@utilisateur_id,p_paiement,@pizzeria_id);
+
+END|
+
+CREATE PROCEDURE afficher_panier_commande(IN p_utilisateur INT)
+
+BEGIN
+SELECT utilisateurs.nom, comptes.login, commandes.id as numero_commande, DATE(commandes.date_ajout) as date_commande, GROUP_CONCAT(DISTINCT produits.nom) as panier
+FROM utilisateurs, commandes, tbl_commande_produits, produits, comptes
+WHERE utilisateurs.id = commandes.id_utilisateur
+AND commandes.id = tbl_commande_produits.id_commande
+AND tbl_commande_produits.id_produit = produits.id
+AND utilisateurs.id_compte = comptes.id
+AND utilisateurs.id = p_utilisateur
+GROUP BY commandes.id
+ORDER BY commandes.id;
+END|
+
+CREATE PROCEDURE afficher_panier_commande_all()
+
+BEGIN
+SELECT utilisateurs.nom, comptes.login, commandes.id as numero_commande, DATE(commandes.date_ajout) as date_commande, GROUP_CONCAT(DISTINCT produits.nom) as panier
+FROM utilisateurs, commandes, tbl_commande_produits, produits, comptes
+WHERE utilisateurs.id = commandes.id_utilisateur
+AND commandes.id = tbl_commande_produits.id_commande
+AND tbl_commande_produits.id_produit = produits.id
+AND utilisateurs.id_compte = comptes.id
+GROUP BY commandes.id
+ORDER BY utilisateurs.id;
+END|
