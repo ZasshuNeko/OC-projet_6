@@ -9,3 +9,6 @@ DROP PROCEDURE afficher_menu_pizzeria;
 DROP PROCEDURE creation_commande;
 DROP PROCEDURE afficher_panier_commande;
 DROP PROCEDURE afficher_panier_commande_all;
+DROP PROCEDURE afficher_produits_perime;
+DROP PROCEDURE afficher_produits_pizzeria;
+DROP PROCEDURE upadate_statut_commande;

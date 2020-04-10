@@ -134,3 +134,42 @@ AND utilisateurs.id_compte = comptes.id
 GROUP BY commandes.id
 ORDER BY utilisateurs.id;
 END|
+
+CREATE PROCEDURE afficher_produits_perime(IN pizzeria_id INT)
+
+BEGIN
+SELECT pizzeria.nom, stock.nom as aliment, stock.quantite as quantite, stock.date_peremption
+FROM pizzeria, stock
+WHERE pizzeria.id = stock.id_pizzeria
+AND stock.date_peremption < DATE(NOW())
+ORDER BY pizzeria.nom;
+END|
+
+CREATE PROCEDURE afficher_produits_pizzeria(IN p_pizzeria_id INT)
+
+BEGIN
+SELECT pizzeria.nom, stock.nom as aliment, stock.quantite as quantite, stock.date_peremption
+FROM pizzeria, stock
+WHERE pizzeria.id = stock.id_pizzeria
+AND stock.date_peremption > DATE(NOW())
+ORDER BY pizzeria.nom;
+END|
+
+CREATE PROCEDURE upadate_statut_commande(IN p_statut_id INT, IN p_commande_id INT)
+
+BEGIN
+IF p_statut_id != 5 THEN 
+	SET @utilisateur_id = 3;
+END IF;
+IF p_statut_id = 5 THEN
+	SET @utilisateur_id = 1;
+END IF; 
+
+DROP TEMPORARY TABLE IF EXISTS tempo_commandes;
+
+INSERT INTO log_commande(id_utilisateur,id_commande,date_modification) VALUES (@utilisateur_id,p_commande_id,NOW());
+
+UPDATE commandes
+SET id_statut = p_statut_id
+WHERE id = p_commande_id;
+END|

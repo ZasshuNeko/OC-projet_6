@@ -159,17 +159,17 @@ CREATE TABLE IF NOT EXISTS `stock` (
 	CONSTRAINT fk_localisation_pizzeria_id FOREIGN KEY (id_pizzeria) REFERENCES pizzeria(id))
 ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO stock(id,nom,quantite,date_ajout,date_peremption,id_localisation,prix,id_pizzeria) VALUES (1,"Concentré de tomate",3,STR_TO_DATE('07-03-2020','%m-%d-%Y'),STR_TO_DATE('07-04-2020','%m-%d-%Y'),1,5.25,1);
+INSERT INTO stock(id,nom,quantite,date_ajout,date_peremption,id_localisation,prix,id_pizzeria) VALUES (1,"Concentré de tomate",3,STR_TO_DATE('07-03-2020','%m-%d-%Y'),STR_TO_DATE('04-07-2020','%m-%d-%Y'),1,5.25,1);
 INSERT INTO stock(id,nom,quantite,date_ajout,date_peremption,id_localisation,prix,id_pizzeria) VALUES (2,"Concentré de tomate",6,STR_TO_DATE('07-03-2020','%m-%d-%Y'),STR_TO_DATE('07-04-2020','%m-%d-%Y'),1,4.25,2);
 INSERT INTO stock(id,nom,quantite,date_ajout,date_peremption,id_localisation,prix,id_pizzeria) VALUES (3,"Concentré de tomate",12,STR_TO_DATE('07-03-2020','%m-%d-%Y'),STR_TO_DATE('07-04-2020','%m-%d-%Y'),1,6.25,3);
 INSERT INTO stock(id,nom,quantite,date_ajout,date_peremption,id_localisation,prix,id_pizzeria) VALUES (4,"Champignons",20,STR_TO_DATE('07-03-2020','%m-%d-%Y'),STR_TO_DATE('07-04-2020','%m-%d-%Y'),2,3.75,1);
-INSERT INTO stock(id,nom,quantite,date_ajout,date_peremption,id_localisation,prix,id_pizzeria) VALUES (5,"Champignons",10,STR_TO_DATE('07-03-2020','%m-%d-%Y'),STR_TO_DATE('07-04-2020','%m-%d-%Y'),2,3.75,2);
+INSERT INTO stock(id,nom,quantite,date_ajout,date_peremption,id_localisation,prix,id_pizzeria) VALUES (5,"Champignons",10,STR_TO_DATE('07-03-2020','%m-%d-%Y'),STR_TO_DATE('04-07-2020','%m-%d-%Y'),2,3.75,2);
 INSERT INTO stock(id,nom,quantite,date_ajout,date_peremption,id_localisation,prix,id_pizzeria) VALUES (6,"Champignons",15,STR_TO_DATE('07-03-2020','%m-%d-%Y'),STR_TO_DATE('07-04-2020','%m-%d-%Y'),2,3.75,3);
 INSERT INTO stock(id,nom,quantite,date_ajout,date_peremption,id_localisation,prix,id_pizzeria) VALUES (7,"Ananas",5,STR_TO_DATE('07-03-2020','%m-%d-%Y'),STR_TO_DATE('07-04-2020','%m-%d-%Y'),3,1.25,1);
 INSERT INTO stock(id,nom,quantite,date_ajout,date_peremption,id_localisation,prix,id_pizzeria) VALUES (8,"Ananas",10,STR_TO_DATE('07-03-2020','%m-%d-%Y'),STR_TO_DATE('07-04-2020','%m-%d-%Y'),3,1.25,2);
-INSERT INTO stock(id,nom,quantite,date_ajout,date_peremption,id_localisation,prix,id_pizzeria) VALUES (9,"Ananas",15,STR_TO_DATE('07-03-2020','%m-%d-%Y'),STR_TO_DATE('07-04-2020','%m-%d-%Y'),3,1.25,3);
-INSERT INTO stock(id,nom,quantite,date_ajout,date_peremption,id_localisation,prix,id_pizzeria) VALUES (10,"Pâte fraiche",50,STR_TO_DATE('07-03-2020','%m-%d-%Y'),STR_TO_DATE('07-04-2020','%m-%d-%Y'),1,1.25,1);
-INSERT INTO stock(id,nom,quantite,date_ajout,date_peremption,id_localisation,prix,id_pizzeria) VALUES (11,"Pâte fraiche",0,STR_TO_DATE('08-01-2020','%m-%d-%Y'),STR_TO_DATE('10-01-2020','%m-%d-%Y'),1,1.25,2);
+INSERT INTO stock(id,nom,quantite,date_ajout,date_peremption,id_localisation,prix,id_pizzeria) VALUES (9,"Ananas",15,STR_TO_DATE('07-03-2020','%m-%d-%Y'),STR_TO_DATE('04-07-2020','%m-%d-%Y'),3,1.25,3);
+INSERT INTO stock(id,nom,quantite,date_ajout,date_peremption,id_localisation,prix,id_pizzeria) VALUES (10,"Pâte fraiche",50,STR_TO_DATE('07-03-2020','%m-%d-%Y'),STR_TO_DATE('04-04-2020','%m-%d-%Y'),1,1.25,1);
+INSERT INTO stock(id,nom,quantite,date_ajout,date_peremption,id_localisation,prix,id_pizzeria) VALUES (11,"Pâte fraiche",0,STR_TO_DATE('08-01-2020','%m-%d-%Y'),STR_TO_DATE('01-01-2020','%m-%d-%Y'),1,1.25,2);
 INSERT INTO stock(id,nom,quantite,date_ajout,date_peremption,id_localisation,prix,id_pizzeria) VALUES (12,"Pâte fraiche",10,STR_TO_DATE('08-01-2020','%m-%d-%Y'),STR_TO_DATE('10-01-2020','%m-%d-%Y'),1,1.25,3);
 INSERT INTO stock(id,nom,quantite,date_ajout,date_peremption,id_localisation,prix,id_pizzeria) VALUES (13,"Jâlopenos",100,STR_TO_DATE('08-01-2020','%m-%d-%Y'),STR_TO_DATE('10-01-2020','%m-%d-%Y'),1,6.25,1);
 INSERT INTO stock(id,nom,quantite,date_ajout,date_peremption,id_localisation,prix,id_pizzeria) VALUES (14,"Jâlopenos",20,STR_TO_DATE('08-01-2020','%m-%d-%Y'),STR_TO_DATE('10-01-2020','%m-%d-%Y'),1,7.25,2);
