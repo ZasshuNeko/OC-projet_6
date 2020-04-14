@@ -38,7 +38,7 @@ INSERT INTO ref_commande_statut(id,nom) VALUES (1,"En Attente");
 INSERT INTO ref_commande_statut(id,nom) VALUES (2,"En préparation");
 INSERT INTO ref_commande_statut(id,nom) VALUES (3,"En livraison");
 INSERT INTO ref_commande_statut(id,nom) VALUES (4,"Finalisée");
-INSERT INTO ref_commande_statut(id,nom) VALUES (5,"Annulé");
+INSERT INTO ref_commande_statut(id,nom) VALUES (5,"Annulée");
 INSERT INTO ref_commande_statut(id,nom) VALUES (6,"Refusée");
 
 CREATE TABLE IF NOT EXISTS `comptes` (
